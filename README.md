@@ -1,2 +1,2 @@
-# agriprecision_analyzer
-AgriPrecision Analyzer
+# agriprecision_drone
+AgriPrecision Drone
