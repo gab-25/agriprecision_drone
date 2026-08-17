@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "project.apps.ProjectConfig",
     "survey.apps.SurveyConfig",
     "report.apps.ReportConfig",
+    "dashboard.apps.DashboardConfig",
 ]
 
 MIDDLEWARE = [
