@@ -30,11 +30,11 @@ the Postgres entrypoint runs `initdb` on an empty data directory only. After cha
 ### Geometries and area
 
 Geometries are stored as GeoJSON in a `JSONField`, so no GDAL/GEOS libraries are needed on
-the Python side. `Project.polygon` must hold a bare GeoJSON *geometry* object
+the Python side. `Workspace.polygon` must hold a bare GeoJSON *geometry* object
 (`{"type": "Polygon", "coordinates": [...]}`) — a `Feature` or `FeatureCollection` is
 rejected by PostGIS and makes the insert fail.
 
-`Project.area` is a PostgreSQL generated column (`STORED`), computed by PostGIS as
+`Workspace.area` is a PostgreSQL generated column (`STORED`), computed by PostGIS as
 `ST_Area(ST_GeomFromGeoJSON(polygon)::geography) / 10000`, i.e. **hectares** measured on
 the spheroid. It is read-only from Django: assigning to it has no effect, the value is
 always recomputed by the database whenever `polygon` changes.

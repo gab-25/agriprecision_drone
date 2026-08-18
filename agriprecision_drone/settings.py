@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "project.apps.ProjectConfig",
+    "django.contrib.gis",
+    "workspace.apps.WorkspaceConfig",
     "survey.apps.SurveyConfig",
     "report.apps.ReportConfig",
     "dashboard.apps.DashboardConfig",
@@ -83,7 +84,7 @@ WSGI_APPLICATION = "agriprecision_drone.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": "django.contrib.gis.db.backends.postgis",
         "NAME": os.environ.get("POSTGRES_DB"),
         "USER": os.environ.get("POSTGRES_USER"),
         "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
